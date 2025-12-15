@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Leltár App</string>
+
+    <!-- Főmenü -->
+    <string name="main_menu_title">Leltározás</string>
+    <string name="btn_new_inventory">Új leltár kezdése</string>
+    <string name="btn_continue_inventory">Folytatás</string>
+    <string name="btn_history">Előzmények</string>
+
+    <!-- Típus választás -->
+    <string name="type_selection_title">Motor típus választása</string>
+    <string name="type_00L">.00L (.163) - PL ház</string>
+    <string name="type_013">.013 (.0LS) - PL ház</string>
+    <string name="type_01H">.01H (.162) - PX ház</string>
+    <string name="type_01P">.01P (.0EJ) - PX ház</string>
+    <string name="btn_select">Kiválaszt</string>
+</resources>
