@@ -15,4 +15,37 @@
     <string name="type_01H">.01H (.162) - PX ház</string>
     <string name="type_01P">.01P (.0EJ) - PX ház</string>
     <string name="btn_select">Kiválaszt</string>
+
+    <!-- Leltár azonosítás -->
+    <string name="label_palette_id">Paletta azonosító / Dátum</string>
+    <string name="label_serial_number">Sorszám</string>
+    <string name="label_signature">Aláírás</string>
+    <string name="btn_start">Indítás</string>
+
+    <!-- Mód választás -->
+    <string name="mode_selection_title">Leltározási mód</string>
+    <string name="mode_selection_subtitle">Válaszd ki, hogyan szeretnél leltározni</string>
+
+    <string name="quick_mode_title">⚡ Gyors mód</string>
+    <string name="quick_mode_description">Alkatrészenként számolsz, +/- gombokkal. Gyors, ha sok motor van egyszerre látható (pl. paletta).</string>
+    <string name="btn_quick_mode">Gyors mód indítása</string>
+
+    <string name="detailed_mode_title">🔍 Pontos mód</string>
+    <string name="detailed_mode_description">Motor-által-motor haladva pipálod ki az alkatrészeket. Alapos, ha kevés motor látható (pl. bowden).</string>
+    <string name="btn_detailed_mode">Pontos mód indítása</string>
+
+    <!-- Gyors mód -->
+    <string name="btn_add_covered_motor">+ Fedeles motor (NEM ELDÖNTHETŐ)</string>
+    <string name="btn_finish">Befejezés</string>
+
+    <!-- Pontos mód -->
+    <string name="motor_number">Motor: #%d</string>
+    <string name="motor_number_format">Motor: #%d</string>
+    <string name="btn_next_motor">Következő motor</string>
+
+    <!-- Összesítés -->
+    <string name="summary_title">✅ Leltár összesítés</string>
+    <string name="summary_parts_title">Alkatrészek</string>
+    <string name="btn_export_pdf">PDF exportálás</string>
+    <string name="btn_done">Kész</string>
 </resources>

@@ -3,6 +3,8 @@ package com.inline.leltarapp
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.button.MaterialButton
+import android.content.Intent
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,6 +17,8 @@ class MainActivity : AppCompatActivity() {
         val btnHistory = findViewById<MaterialButton>(R.id.btnHistory)
 
         btnNewInventory.setOnClickListener {
+            val intent = Intent(this, TypeSelectionActivity::class.java)
+            startActivity(intent)
         }
 
         btnContinue.setOnClickListener {

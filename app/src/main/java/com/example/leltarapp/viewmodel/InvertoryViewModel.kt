@@ -64,20 +64,19 @@ class InventoryViewModel : ViewModel() {
     fun incrementPart(partId: String, variantId: String? = null, amount: Int = 1) {
         viewModelScope.launch {
             _inventory.value?.let { inv ->
-                val updated = inv.copy()
-
                 // Alap mennyiség növelése
-                val currentTotal = updated.totalParts[partId] ?: 0
-                updated.totalParts[partId] = currentTotal + amount
+                val currentTotal = inv.totalParts[partId] ?: 0
+                inv.totalParts[partId] = currentTotal + amount
 
                 // Variáns mennyiség növelése (ha van)
                 if (variantId != null) {
-                    val variantMap = updated.totalPartVariants.getOrPut(partId) { mutableMapOf() }
+                    val variantMap = inv.totalPartVariants.getOrPut(partId) { mutableMapOf() }
                     val currentVariantCount = variantMap[variantId] ?: 0
                     variantMap[variantId] = currentVariantCount + amount
                 }
 
-                _inventory.value = updated
+                // Trigger StateFlow update
+                _inventory.value = inv.copy()
             }
         }
     }
@@ -88,22 +87,21 @@ class InventoryViewModel : ViewModel() {
     fun decrementPart(partId: String, variantId: String? = null, amount: Int = 1) {
         viewModelScope.launch {
             _inventory.value?.let { inv ->
-                val updated = inv.copy()
-
                 // Alap mennyiség csökkentése (nem mehet negatívba)
-                val currentTotal = updated.totalParts[partId] ?: 0
-                updated.totalParts[partId] = maxOf(0, currentTotal - amount)
+                val currentTotal = inv.totalParts[partId] ?: 0
+                inv.totalParts[partId] = maxOf(0, currentTotal - amount)
 
                 // Variáns mennyiség csökkentése (ha van)
                 if (variantId != null) {
-                    val variantMap = updated.totalPartVariants[partId]
+                    val variantMap = inv.totalPartVariants[partId]
                     if (variantMap != null) {
                         val currentVariantCount = variantMap[variantId] ?: 0
                         variantMap[variantId] = maxOf(0, currentVariantCount - amount)
                     }
                 }
 
-                _inventory.value = updated
+                // Trigger StateFlow update
+                _inventory.value = inv.copy()
             }
         }
     }
